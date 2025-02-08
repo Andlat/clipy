@@ -42,9 +42,7 @@ def test_invalid_argument_type():
 
 
 def test_multiple_arguments():
-    @clipy.command(
-        usage="test.py --arg1 <arg1> --arg2 <arg2>", description="Test command"
-    )
+    @clipy.command(usage="test.py --arg1 <arg1> --arg2 <arg2>", description="Test command")
     @clipy.argument("arg1", help="Test argument 1", type=int, required=True)
     @clipy.argument("arg2", help="Test argument 2", type=str, required=True)
     def func(*_args, arg1, arg2, **_kwargs):
