@@ -57,7 +57,7 @@ jobs:
         run: echo "${{ steps.create_release.outputs.upload_url }}" > release_url.txt
 
       - name: Upload release url
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: release_url
           path: src/${{ github.event.repository.name }}/release_url.txt
