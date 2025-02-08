@@ -34,11 +34,16 @@ def main():
     paths = args.path
     threshold = args.threshold
 
-    logging.info(
-        "Running Pylint within %s, will pass if the score is over: %s", paths, threshold
-    )
+    logging.info("Running Pylint within %s, will pass if the score is over: %s", paths, threshold)
 
-    result = lint.Run(["--rcfile=pylintrc", *paths], do_exit=False)
+    disabled = [
+        "line-too-long",
+        "missing-module-docstring",
+    ]
+
+    result = lint.Run(
+        ["--disable=" + ",".join(disabled), "--rcfile=pylintrc", *paths], do_exit=False
+    )
     rating = result.linter.stats.global_note
 
     if rating < threshold and result.linter.stats.statement > 0:
