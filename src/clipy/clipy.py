@@ -5,9 +5,17 @@ Command line argument decorator.
 import argparse
 import functools
 
+from .deprecated import deprecated
 
+
+@deprecated
 def command(usage: str = None, description: str = None):
     """
+    Legacy command implementation.
+    .. deprecated:: 0.1.0
+        This function is deprecated since version 0.1.0 and will be removed in future version.
+        Use `clipy.decorators.Command` instead.
+
     Decorator that define an argument parser for the function.
 
     Example:
@@ -49,8 +57,14 @@ def command(usage: str = None, description: str = None):
     return decorator
 
 
+@deprecated
 def argument(name, **kwargs):
     """
+    Legacy argument implementation.
+    .. deprecated:: 0.1.0
+        This function is deprecated since version 0.1.0 and will be removed in future version.
+        Use `clipy.decorators.Option` instead.
+
     Decorator for adding arguments to the argument parser.
 
     Example:
