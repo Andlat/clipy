@@ -25,7 +25,7 @@ repos:
         types: [python]
         additional_dependencies: [black==23.1.0]
         log_file: .black.log
-        stages: [commit]
+        stages: [pre-commit]
 
       - id: pylint
         name: pylint
@@ -33,4 +33,4 @@ repos:
         language: python
         types: [python]
         additional_dependencies: [pylint==2.16.2]
-        stages: [commit]
+        stages: [pre-commit]
