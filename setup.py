@@ -1,5 +1,5 @@
-""" Setup clipy package
-"""
+"""Setup clipy package"""
+
 import os
 
 import setuptools

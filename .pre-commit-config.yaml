@@ -22,7 +22,7 @@ repos:
         entry: black
         language: python
         types: [python]
-        additional_dependencies: [black==23.1.0]
+        additional_dependencies: [black==25.1.0]
         log_file: .black.log
         stages: [pre-commit]
 
@@ -31,5 +31,5 @@ repos:
         entry: "python lint.py --threshold 9 --path"
         language: python
         types: [python]
-        additional_dependencies: [pylint==2.16.2]
+        additional_dependencies: [pylint==3.3.6]
         stages: [pre-commit]
